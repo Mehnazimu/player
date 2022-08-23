@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select-players</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Header start -->
+    <header class="bg-cover h-80 bg-slate-900">
+        <h1 class="italic text-5xl text-center p-10  text-red-800 hover:text-red-700 font-bold  ">Select Your Best Five
+        </h1>
+        <p class="text-center text-white p-10">PSG have the most consecutive seasons playing in France's <br> top flight
+            and
+            are
+            one of two
+            French clubs to have won a major European title.<br> They are the most popular football club in France and
+            one
+            of the most widely supported teams in the world.</p>
+
+    </header>
+    <!-- Header end -->
+
+    <!-- Main start -->
+    <main class="mx-auto">
+        <section class="">
+            <div class=" grid grid-cols-2 gap-4 mt-8 ">
+                <!--players section  -->
+                <div class="grid grid-cols-3 gap-5  ">
+                    <!-- player-1 -->
+                    <div class="card  bg-black-100 shadow-xl">
+                        <figure class="">
+                            <img src="images/Lionel Messi.png" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Lionel Messi</h2>
+
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="addToList(this); disable(this)">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--player-2  -->
+                    <div class="card  bg-black-100 shadow-xl">
+                        <figure>
+                            <img src="images/Kylian Mbappé.png" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Kylian Mbappé</h2>
+
+                            <div class="card-actions">
+                                <button class="btn btn-primary"
+                                    onclick="addToList(this); disable(this); ">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- player-3 -->
+                    <div class="card  bg-black-100 shadow-xl">
+                        <figure>
+                            <img src="images/Achraf Hakimi.png" alt="Shoes" class="" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Achraf Hakimi</h2>
+
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="addToList(this); disable(this)">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- player-4 -->
+                    <div class="card  bg-black-100 shadow-xl">
+                        <figure>
+                            <img src="images/Sergio Ramos.png" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Sergio Ramos</h2>
+
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="addToList(this); disable(this)">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- player-5 -->
+                    <div class="card  bg-black-100 shadow-xl">
+                        <figure class="">
+                            <img src="images/Renato Sanches.png" alt="Shoes" class="" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Renato Sanches</h2>
+
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="addToList(this); disable(this)">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- player -6 -->
+                    <div class="card  bg-black-100 shadow-xl">
+                        <figure class="">
+                            <img src="images/Pablo Sarabia.png" alt="Shoes" class="" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title">Pablo Sarabia</h2>
+
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="addToList(this); disable(this)">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="grid grid-cols-1 p-5">
+                        <div>
+                            <h2 class="text-lg font-bold text-center">Selected-V</h2>
+                            <div class="  text-2xl bg-black-100 shadow-xl">
+                                <ol id="players-list" class="list-decimal bg-slate-300 list-inside">
+
+                                </ol>
+                            </div>
+
+                        </div>
+                        <!-- ... -->
+                        <!-- budget section -->
+                        <div class="w-1/2 mt-2">
+                            <h2 class="text-lg font-bold text-center">Budget</h2>
+                            <div class=" bg-black-100 shadow-xl">
+
+                                <div class="form-control">
+
+                                    <label class="input-group">
+
+                                        <div class="form-control">
+
+                                            <label class="p-3 input-group">
+                                                <span>Per Player</span>
+                                                <input id="per-player" type="text" placeholder=""
+                                                    class="input input-bordered" />
+
+                                            </label>
+                                        </div>
+
+                                    </label>
+                                </div>
+
+                                <button id="calculate-btn"
+                                    class="btn btn-primary text-white btn-sm m-5 hover:bg-violet-500">Calculate</button>
+                                <br>
+                                <div>
+                                    <span class="font-bold m-3">Player Expenses: <span>$</span><span
+                                            id="player-expenses">0</span></span>
+                                </div>
+
+                                <div class="form-control">
+
+                                    <label class="  p-3 input-group">
+                                        <span>Manager</span>
+                                        <input id="manager" type="text" placeholder="" class="input input-bordered" />
+
+                                    </label>
+                                </div>
+                                <br>
+
+                                <div class="form-control">
+
+                                    <label class="p-3 input-group">
+                                        <span>Coach</span>
+                                        <input id="coach" type="text" placeholder="" class="input input-bordered" />
+
+                                    </label>
+                                </div>
+                                <br>
+
+                                <br>
+                                <button id="calculate-total-btn"
+                                    class="btn btn-primary text-white btn-sm m-3 hover:bg-violet-500">Calculate
+                                    Total</button>
+                                <br>
+                                <br>
+
+                                <div class=" mb-2 form-control">
+
+                                    <label class="p-4 input-group">
+                                        <span>Total:<span>$</span><span id="total">0</span></span>
+
+
+                                    </label>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+<script src="js/selected-V.js"></script>
+<script src="js/budget.js"></script>
+
+</html>
